@@ -33,8 +33,9 @@ body {
   display: none;
   width: 100%;
   min-height: 100vh;
-  padding: 60px 0;
+  padding: 100px 0 40px; /* start from top, not center */
 }
+
 
 .page-section.active {
   display: block;
@@ -47,10 +48,11 @@ body {
   border-radius: 18px;
   width: 70%;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto; /* horizontal center only */
   box-shadow: 0 0 40px rgba(56,189,248,0.35);
   text-align: center;
 }
+
 
 /* HERO */
 .hero {
