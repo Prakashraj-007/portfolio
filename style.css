@@ -254,3 +254,41 @@ body {
     padding: 30px;
   }
 }
+/* MOBILE UX IMPROVEMENTS */
+@media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+    overscroll-behavior-y: auto; /* enables pull-to-refresh */
+  }
+
+  .hero {
+    gap: 30px; /* reduce space */
+  }
+
+  /* Move nav closer to hero */
+  .home-grid {
+    margin-top: 10px;
+  }
+
+  /* Bigger, touch-friendly icons */
+  .home-card {
+    padding: 28px;
+  }
+
+  .home-card h3 {
+    font-size: 18px;
+  }
+
+  /* Reduce photo size slightly */
+  .photo-ring {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  /* Smaller typing text */
+  .typing-text {
+    font-size: 30px;
+  }
+}
