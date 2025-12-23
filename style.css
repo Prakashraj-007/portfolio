@@ -32,9 +32,9 @@ body {
 .page-section {
   display: none;
   width: 100%;
-  min-height: 100vh;
-  padding: 100px 0 40px; /* start from top, not center */
+  padding: 80px 0 40px;
 }
+
 
 
 .page-section.active {
@@ -59,17 +59,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
+
 
 /* TYPING CONTAINER */
 .typing-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
+
 
 /* PHOTO */
 .photo-ring {
