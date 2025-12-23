@@ -15,13 +15,11 @@ body {
   color: #e5e7eb;
 }
 
-/* HEADER */
 .name-header {
   position: fixed;
-  top: 18px;
-  left: 24px;
+  top: 20px;
+  left: 30px;
   font-size: 20px;
-  font-weight: 600;
   color: #38bdf8;
 }
 
@@ -36,25 +34,28 @@ body {
   display: flex;
 }
 
-/* HOME */
+/* HERO */
 .hero {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-card {
-  background: rgba(15,23,42,0.85);
-  padding: 50px 60px;
-  border-radius: 22px;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   text-align: center;
-  box-shadow: 0 0 40px rgba(56,189,248,0.35);
 }
+
+
+
 
 /* PHOTO */
 .photo-ring {
   width: 120px;
   height: 120px;
-  margin: auto;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, #38bdf8, #8b5cf6);
@@ -70,7 +71,6 @@ body {
 /* TEXT */
 .typing-text {
   font-size: 36px;
-  margin-top: 18px;
   background: linear-gradient(90deg, #38bdf8, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -79,25 +79,21 @@ body {
 .subtitle {
   font-size: 14px;
   opacity: 0.75;
-  margin-top: 6px;
 }
 
-/* NAV */
-/* ===== HOME NAV (BIG & PREMIUM) ===== */
-
-/* ===== HOME NAV GRID (DEFAULT = DESKTOP) ===== */
+/* ✅ 2 x 2 GRID */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ 2 + 2 layout */
-  gap: 28px;
-  margin-top: 45px;
-  width: 70%;
-  max-width: 700px;
+  grid-template-columns: repeat(2, 1fr);   /* 2 + 2 */
+  gap: 30px;
+  width: 600px;                            /* 🔥 BIGGER GRID */
+  margin-top: 30px;
 }
 
 .home-grid button {
-  height: 90px;               /* 🔥 LARGE BUTTONS */
-  border-radius: 22px;
+  height: 120px;                           /* 🔥 BIG BOXES */
+  width: 100%;
+  border-radius: 26px;
 
   background: linear-gradient(
     145deg,
@@ -106,41 +102,47 @@ body {
   );
 
   color: #38bdf8;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 
   border: 1px solid rgba(56,189,248,0.45);
+
   box-shadow:
-    0 0 20px rgba(56,189,248,0.3),
-    inset 0 0 10px rgba(56,189,248,0.05);
+    0 0 25px rgba(56,189,248,0.35),
+    inset 0 0 18px rgba(56,189,248,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: all 0.3s ease;
 }
 
+
 .home-grid button:hover {
-  background: rgba(56,189,248,0.15);
-  box-shadow: 0 0 40px rgba(56,189,248,0.7);
-  transform: translateY(-6px) scale(1.03);
+  background: rgba(56,189,248,0.18);
+  box-shadow: 0 0 45px rgba(56,189,248,0.7);
+  transform: translateY(-6px) scale(1.04);
 }
 
-/* CARD */
+/* CARDS */
 .card {
   margin: auto;
-  width: 90%;
-  max-width: 720px;
   background: rgba(15,23,42,0.9);
   padding: 40px;
   border-radius: 18px;
+  width: 90%;
+  max-width: 700px;
   text-align: center;
 }
 
 /* PROJECT */
 .project {
-  margin-top: 16px;
-  padding: 14px;
+  margin-top: 14px;
+  padding: 16px;
+  background: rgba(15,23,42,0.9);
   border-radius: 12px;
   cursor: pointer;
-  background: #020617;
 }
 
 .project:hover {
@@ -153,10 +155,11 @@ body {
   inset: 0;
   background: rgba(0,0,0,0.75);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
+  z-index: 9999;
 }
 
 .modal.show {
@@ -166,30 +169,47 @@ body {
 
 .modal-content {
   background: #020617;
-  padding: 40px;
+  padding: 30px;
   border-radius: 18px;
   width: 90%;
-  max-width: 600px;
-  text-align: left;
+  max-width: 500px;
+  text-align: center;
 }
-/* ================= MOBILE HOME FIX ================= */
-/* ===== MOBILE FIX ===== */
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* BACK */
+.back-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  background: rgba(15,23,42,0.9);
+  color: #38bdf8;
+  border-radius: 20px;
+}
+
 @media (max-width: 768px) {
 
-  html, body {
-    height: auto;
-    overflow-y: auto;
-    overscroll-behavior-y: auto;
-  }
-
   .home-grid {
-    grid-template-columns: 1fr;   /* ✅ ONE BELOW EACH */
-    width: 88%;
-    gap: 18px;
+    grid-template-columns: 1fr;   /* one below each */
+    width: 90%;
+    gap: 20px;
   }
 
   .home-grid button {
-    height: 70px;
-    font-size: 16px;
+    height: 80px;
+    font-size: 17px;
+    border-radius: 20px;
+  }
+
+  .typing-text {
+    font-size: 26px;
   }
 }
