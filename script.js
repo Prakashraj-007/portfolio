@@ -1,16 +1,14 @@
 function showSection(id) {
-  document.querySelectorAll(".page-section").forEach(s =>
-    s.classList.remove("active")
-  );
+  document.querySelectorAll(".page-section").forEach(section => {
+    section.classList.remove("active");
+  });
 
   document.getElementById(id).classList.add("active");
-
-  window.scrollTo(0, 0);
 }
 
-
-
-
+function goHome() {
+  showSection("home");
+}
 
 /* PROJECT DATA */
 const projects = {

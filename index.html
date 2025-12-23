@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Prakash R | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,12 +13,9 @@
 
 <!-- HOME -->
 <section class="page-section active hero" id="home">
-
-  <!-- Typing Intro -->
   <div class="typing-container">
     <div class="photo-ring">
       <img src="raj.jpeg" alt="Prakash R">
-
     </div>
 
     <h1 class="typing-text">
@@ -27,27 +25,13 @@
     <p class="subtitle">Computer Science Engineering Student</p>
   </div>
 
-  <!-- Navigation Cards -->
-  <div class="home-grid mini-nav">
-    <div class="home-card" onclick="showSection('about')">
-      <h3>About</h3>
-    </div>
-
-    <div class="home-card" onclick="showSection('skills')">
-      <h3>Skills</h3>
-    </div>
-
-    <div class="home-card" onclick="showSection('projects')">
-      <h3>Projects</h3>
-    </div>
-
-    <div class="home-card" onclick="showSection('contact')">
-      <h3>Contact</h3>
-    </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="showSection('about')">About</div>
+    <div class="home-card" onclick="showSection('skills')">Skills</div>
+    <div class="home-card" onclick="showSection('projects')">Projects</div>
+    <div class="home-card" onclick="showSection('contact')">Contact</div>
   </div>
-
 </section>
-
 
 <!-- ABOUT -->
 <section class="page-section" id="about">
@@ -56,7 +40,7 @@
     <p>
       I am a 2nd year Computer Science Engineering student passionate about
       building real-world projects, participating in hackathons, and learning
-      modern backend & web technologies.
+      backend & web technologies.
     </p>
   </div>
 </section>
@@ -80,29 +64,16 @@
 <section class="page-section" id="projects">
   <div class="card">
     <h2>Projects</h2>
-
-    <div class="project" onclick="openProject('swift')">
-      <h3>SWIFT-Care</h3>
-      <span>Click to view details →</span>
-    </div>
-
-    <div class="project" onclick="openProject('subscription')">
-      <h3>Subscription Management</h3>
-      <span>Click to view details →</span>
-    </div>
-
-    <div class="project" onclick="openProject('air')">
-      <h3>Air Quality Predictor</h3>
-      <span>Click to view details →</span>
-    </div>
-
+    <div class="project">SWIFT-Care</div>
+    <div class="project">Subscription Management</div>
+    <div class="project">Air Quality Predictor</div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="page-section" id="contact">
   <div class="card">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <p>📞 +91 9080128443</p>
     <p>📧 prakashraj.20062009@gmail.com</p>
     <p>
@@ -112,19 +83,8 @@
   </div>
 </section>
 
-<!-- PROJECT MODAL -->
-<div class="modal" id="projectModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalDesc"></p>
-    <p class="tech" id="modalTech"></p>
-    <a id="modalLink" target="_blank">View on GitHub →</a>
-  </div>
-</div>
+<div class="back-btn" onclick="showSection('home')">← Home</div>
 
 <script src="script.js"></script>
-<div class="back-btn" onclick="goHome()">← Home</div>
-
 </body>
 </html>
