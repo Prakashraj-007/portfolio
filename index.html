@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prakash R | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="name-header">Prakash R</div>
+
+<!-- HOME -->
+<section class="page-section active hero" id="home">
+
+  <!-- Typing Intro -->
+  <div class="typing-container">
+    <div class="photo-ring">
+      <img src="raj.jpeg" alt="Prakash R">
+
+    </div>
+
+    <h1 class="typing-text">
+      <span id="typed-text"></span><span class="cursor">|</span>
+    </h1>
+
+    <p class="subtitle">Computer Science Engineering Student</p>
+  </div>
+
+  <!-- Navigation Cards -->
+  <div class="home-grid mini-nav">
+    <div class="home-card" onclick="showSection('about')">
+      <h3>About</h3>
+    </div>
+
+    <div class="home-card" onclick="showSection('skills')">
+      <h3>Skills</h3>
+    </div>
+
+    <div class="home-card" onclick="showSection('projects')">
+      <h3>Projects</h3>
+    </div>
+
+    <div class="home-card" onclick="showSection('contact')">
+      <h3>Contact</h3>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="page-section" id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      I am a 2nd year Computer Science Engineering student passionate about
+      building real-world projects, participating in hackathons, and learning
+      modern backend & web technologies.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="page-section" id="skills">
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="box">HTML</div>
+      <div class="box">CSS</div>
+      <div class="box">JavaScript</div>
+      <div class="box">Python</div>
+      <div class="box">Java</div>
+      <div class="box">Git & GitHub</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="page-section" id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+
+    <div class="project" onclick="openProject('swift')">
+      <h3>SWIFT-Care</h3>
+      <span>Click to view details →</span>
+    </div>
+
+    <div class="project" onclick="openProject('subscription')">
+      <h3>Subscription Management</h3>
+      <span>Click to view details →</span>
+    </div>
+
+    <div class="project" onclick="openProject('air')">
+      <h3>Air Quality Predictor</h3>
+      <span>Click to view details →</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page-section" id="contact">
+  <div class="card">
+    <h2>Contact Me</h2>
+    <p>📞 +91 9080128443</p>
+    <p>📧 prakashraj.20062009@gmail.com</p>
+    <p>
+      <a href="https://github.com/Prakashraj-007" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/prakash-r-6a41b032a/" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <p class="tech" id="modalTech"></p>
+    <a id="modalLink" target="_blank">View on GitHub →</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<div class="back-btn" onclick="goHome()">← Home</div>
+
+</body>
+</html>
