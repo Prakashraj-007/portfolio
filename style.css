@@ -6,11 +6,16 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* DEFAULT: DESKTOP BEHAVIOR */
+/* 🔥 BUTTON RESET (THIS IS THE FIX) */
+button {
+  all: unset;              /* remove browser default */
+  cursor: pointer;
+}
+
+/* BASE */
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -21,8 +26,8 @@ body {
 /* HEADER */
 .name-header {
   position: fixed;
-  top: 16px;
-  left: 20px;
+  top: 18px;
+  left: 24px;
   font-size: 20px;
   font-weight: 600;
   color: #38bdf8;
@@ -40,19 +45,14 @@ body {
   display: flex;
 }
 
-/* ===================== */
-/* HOME SECTION          */
-/* ===================== */
+/* ================= HOME ================= */
 
 .hero {
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 80px 20px 40px;
-}
-
-/* TOP CONTENT */
-.hero-top {
+  justify-content: center;
+  gap: 26px;
+  padding-top: 80px;
   text-align: center;
 }
 
@@ -60,10 +60,10 @@ body {
 .photo-ring {
   width: 120px;
   height: 120px;
-  margin: 0 auto 12px;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+  box-shadow: 0 0 30px rgba(56,189,248,0.6);
 }
 
 .photo-ring img {
@@ -76,49 +76,43 @@ body {
 
 /* TEXT */
 .typing-text {
-  font-size: 32px;
+  font-size: 36px;
+  font-weight: 600;
   background: linear-gradient(90deg, #38bdf8, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  margin-top: 6px;
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-/* ===================== */
-/* HOME NAV (DESKTOP)    */
-/* ===================== */
-
+/* ===== NAV BUTTONS (DESKTOP FIXED) ===== */
 .home-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  width: 100%;
-  max-width: 420px;
+  display: flex;
+  gap: 16px;
+  margin-top: 14px;
 }
 
-.home-card {
-  background: #020617;
+.home-grid button {
+  background: rgba(15, 23, 42, 0.9);
   color: #38bdf8;
-  border: 1px solid #38bdf8;
-  padding: 14px 0;
+  border: 1px solid rgba(56,189,248,0.6);
+  padding: 12px 22px;
   border-radius: 14px;
-  cursor: pointer;
-  text-align: center;
   font-size: 14px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(56,189,248,0.25);
 }
 
-.home-card:hover {
+.home-grid button:hover {
   background: rgba(56,189,248,0.15);
+  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+  transform: translateY(-2px);
 }
 
-/* ===================== */
-/* INNER PAGES           */
-/* ===================== */
+/* ================= INNER PAGES ================= */
 
 .card {
   margin: auto;
@@ -128,20 +122,7 @@ body {
   padding: 40px;
   border-radius: 18px;
   text-align: center;
-}
-
-/* SKILLS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.box {
-  border: 1px solid #38bdf8;
-  padding: 14px;
-  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(56,189,248,0.35);
 }
 
 /* BACK BUTTON */
@@ -149,7 +130,7 @@ body {
   position: fixed;
   bottom: 18px;
   left: 18px;
-  background: #020617;
+  background: rgba(15,23,42,0.9);
   color: #38bdf8;
   border: 1px solid #38bdf8;
   border-radius: 20px;
@@ -158,13 +139,10 @@ body {
   z-index: 1000;
 }
 
-/* ===================== */
-/* MOBILE MODE (KEY FIX) */
-/* ===================== */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
-  /* ENABLE SCROLL + REFRESH */
   html, body {
     height: auto;
     overflow-y: auto;
@@ -177,35 +155,35 @@ body {
   }
 
   .hero {
-    padding: 70px 16px 30px;
-    gap: 24px;
+    padding-top: 70px;
+    gap: 20px;
   }
 
   .photo-ring {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
   }
 
   .typing-text {
     font-size: 24px;
   }
 
-  .subtitle {
-    font-size: 12px;
-  }
-
-  /* 🔥 MOBILE NAV: VERTICAL STACK */
+  /* MOBILE ROW-WISE NAV */
   .home-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 90%;
-    max-width: 320px;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 6px 10px;
+    width: 100%;
+    justify-content: flex-start;
+    scrollbar-width: none;
   }
 
-  .home-card {
-    padding: 16px;
-    font-size: 15px;
-    border-radius: 18px;
+  .home-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-grid button {
+    min-width: 120px;
+    flex-shrink: 0;
   }
 }
