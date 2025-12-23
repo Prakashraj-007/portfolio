@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +5,9 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* BUTTON RESET */
 button {
   all: unset;
   cursor: pointer;
-}
-
-/* BASE */
-html, body {
-  width: 100%;
-  height: 100%;
 }
 
 body {
@@ -31,7 +23,6 @@ body {
   font-size: 20px;
   font-weight: 600;
   color: #38bdf8;
-  z-index: 1000;
 }
 
 /* SECTIONS */
@@ -45,30 +36,28 @@ body {
   display: flex;
 }
 
-/* ================= HOME ================= */
-
+/* HOME */
 .hero {
-  display: flex;                 /* ✅ FIX */
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.hero-content {                  /* ✅ FIX */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
+.hero-card {
+  background: rgba(15,23,42,0.85);
+  padding: 50px 60px;
+  border-radius: 22px;
   text-align: center;
+  box-shadow: 0 0 40px rgba(56,189,248,0.35);
 }
 
 /* PHOTO */
 .photo-ring {
   width: 120px;
   height: 120px;
+  margin: auto;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, #38bdf8, #8b5cf6);
-  box-shadow: 0 0 30px rgba(56,189,248,0.6);
 }
 
 .photo-ring img {
@@ -76,13 +65,12 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 30%;
 }
 
 /* TEXT */
 .typing-text {
   font-size: 36px;
-  font-weight: 600;
+  margin-top: 18px;
   background: linear-gradient(90deg, #38bdf8, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -91,53 +79,48 @@ body {
 .subtitle {
   font-size: 14px;
   opacity: 0.75;
+  margin-top: 6px;
 }
 
-/* NAV BUTTONS (DESKTOP) */
+/* NAV */
 .home-grid {
   display: flex;
   gap: 16px;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 26px;
 }
 
 .home-grid button {
-  background: rgba(15, 23, 42, 0.9);
-  color: #38bdf8;
-  border: 1px solid rgba(56,189,248,0.6);
   padding: 12px 22px;
   border-radius: 14px;
-  font-size: 14px;
+  color: #38bdf8;
+  border: 1px solid rgba(56,189,248,0.6);
+  background: rgba(2,6,23,0.9);
   transition: 0.3s;
-  box-shadow: 0 0 12px rgba(56,189,248,0.25);
 }
 
 .home-grid button:hover {
   background: rgba(56,189,248,0.15);
-  box-shadow: 0 0 20px rgba(56,189,248,0.6);
-  transform: translateY(-2px);
 }
 
-/* ================= INNER PAGES ================= */
-
+/* CARD */
 .card {
   margin: auto;
   width: 90%;
-  max-width: 700px;
+  max-width: 720px;
   background: rgba(15,23,42,0.9);
   padding: 40px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 0 30px rgba(56,189,248,0.35);
 }
 
 /* PROJECT */
 .project {
   margin-top: 16px;
-  padding: 16px;
+  padding: 14px;
   border-radius: 12px;
   cursor: pointer;
-  background: rgba(15,23,42,0.9);
-  transition: 0.3s;
+  background: #020617;
 }
 
 .project:hover {
@@ -148,14 +131,12 @@ body {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: 0.3s;
-  z-index: 2000;
 }
 
 .modal.show {
@@ -165,73 +146,9 @@ body {
 
 .modal-content {
   background: #020617;
-  padding: 30px;
+  padding: 40px;
   border-radius: 18px;
   width: 90%;
-  max-width: 500px;
-  text-align: center;
-}
-
-.close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* BACK BUTTON */
-.back-btn {
-  position: fixed;
-  bottom: 18px;
-  left: 18px;
-  background: rgba(15,23,42,0.9);
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
-  border-radius: 20px;
-  padding: 8px 14px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  html, body {
-    height: auto;
-    overflow-y: auto;
-    overscroll-behavior-y: auto;
-  }
-
-  .page-section {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .photo-ring {
-    width: 96px;
-    height: 96px;
-  }
-
-  .typing-text {
-    font-size: 24px;
-  }
-
-  /* MOBILE ROW-WISE NAV */
-  .home-grid {
-    overflow-x: auto;
-    width: 100%;
-    padding: 6px 10px;
-    scrollbar-width: none;
-  }
-
-  .home-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .home-grid button {
-    min-width: 120px;
-    flex-shrink: 0;
-  }
+  max-width: 600px;
+  text-align: left;
 }

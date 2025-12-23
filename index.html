@@ -11,8 +11,7 @@
 
 <!-- HOME -->
 <section class="page-section active hero" id="home">
-
-  <div class="hero-content">
+  <div class="hero-card">
 
     <div class="photo-ring">
       <img src="raj.jpeg" alt="Prakash R" />
@@ -24,7 +23,6 @@
 
     <p class="subtitle">Computer Science Engineering Student</p>
 
-    <!-- NAV BUTTONS (INSIDE HERO) -->
     <div class="home-grid">
       <button onclick="showSection('about')">About</button>
       <button onclick="showSection('skills')">Skills</button>
@@ -81,13 +79,13 @@
   </div>
 </section>
 
-<!-- MODAL -->
+<!-- PROJECT MODAL -->
 <div class="modal" id="projectModal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">×</span>
     <h2 id="modalTitle"></h2>
     <p id="modalDesc"></p>
-    <p id="modalTech"></p>
+    <p class="tech" id="modalTech"></p>
     <a id="modalLink" target="_blank">View on GitHub →</a>
   </div>
 </div>
