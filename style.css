@@ -304,3 +304,13 @@ body {
 .card a:hover {
   text-decoration: underline;
 }
+/* 🔗 Global link visibility fix */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
