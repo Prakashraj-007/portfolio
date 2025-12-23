@@ -2,8 +2,17 @@ function showSection(id) {
   document.querySelectorAll(".page-section").forEach(section => {
     section.classList.remove("active");
   });
-  document.getElementById(id).classList.add("active");
+
+  const target = document.getElementById(id);
+  target.classList.add("active");
+
+  /* 🔥 CRITICAL FIX */
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
+
 
 /* PROJECT DATA */
 const projects = {
