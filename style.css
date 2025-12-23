@@ -6,9 +6,12 @@
 }
 
 button {
-  all: unset;
+  background: none;
+  border: none;
   cursor: pointer;
+  font-family: inherit;
 }
+
 
 body {
   background: radial-gradient(circle at top, #020617, #000);

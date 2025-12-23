@@ -2,12 +2,17 @@ function showSection(id) {
   document.querySelectorAll(".page-section").forEach(s =>
     s.classList.remove("active")
   );
-  document.getElementById(id).classList.add("active");
+
+  const target = document.getElementById(id);
+  target.classList.add("active");
+
+  // 🔥 THIS IS THE FIX
+  window.scrollTo({
+    top: 0,
+    behavior: "instant"
+  });
 }
 
-function goHome() {
-  showSection("home");
-}
 
 /* PROJECT DATA */
 const projects = {
