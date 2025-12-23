@@ -1,12 +1,7 @@
-/* ============================= */
-/* PAGE NAVIGATION               */
-/* ============================= */
-
 function showSection(id) {
-  document.querySelectorAll(".page-section").forEach(section => {
-    section.classList.remove("active");
-  });
-
+  document.querySelectorAll(".page-section").forEach(s =>
+    s.classList.remove("active")
+  );
   document.getElementById(id).classList.add("active");
 }
 
@@ -14,27 +9,24 @@ function goHome() {
   showSection("home");
 }
 
-/* ============================= */
-/* PROJECT DATA & MODAL          */
-/* ============================= */
-
+/* PROJECT DATA */
 const projects = {
   swift: {
     title: "SWIFT-Care",
-    desc: "A healthcare assistance platform designed to provide quick access to medical help, emergency support, and patient-centric services.",
-    tech: "Tech Stack: HTML, CSS, JavaScript, Backend APIs",
+    desc: "Healthcare assistance platform for quick medical access.",
+    tech: "HTML, CSS, JavaScript",
     link: "https://github.com/Prakashraj-007/SWIFT_care"
   },
   subscription: {
-    title: "Subscription Management System",
-    desc: "A smart system to track, manage, and analyze subscriptions efficiently.",
-    tech: "Tech Stack: JavaFX, MySQL, JDBC",
+    title: "Subscription Management",
+    desc: "Track and manage recurring subscriptions.",
+    tech: "JavaFX, MySQL, JDBC",
     link: "https://github.com/Prakashraj-007/SUBSCRIPTION_TRACKER22"
   },
   air: {
     title: "Air Quality Predictor",
-    desc: "A machine-learning based system that predicts air quality using environmental data.",
-    tech: "Tech Stack: Python, Machine Learning, Data Analysis",
+    desc: "ML-based air quality prediction system.",
+    tech: "Python, ML",
     link: "https://github.com/Prakashraj-007/AIR_QUALITY_PREDICTOR_FDS"
   }
 };
@@ -52,28 +44,15 @@ function closeModal() {
   document.getElementById("projectModal").classList.remove("show");
 }
 
-/* ============================= */
-/* TYPING EFFECT (HOME ONLY)     */
-/* ============================= */
-
-const text = "Hi, I'm Prakash R 👋";
-const speed = 100;
-let index = 0;
+/* TYPING */
+const text = "Hi, I'm Prakash R";
+let i = 0;
 
 function typeEffect() {
-  const target = document.getElementById("typed-text");
-  if (!target) return;
-
-  if (index < text.length) {
-    target.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, speed);
+  if (i < text.length) {
+    document.getElementById("typed-text").textContent += text.charAt(i++);
+    setTimeout(typeEffect, 90);
   }
 }
 
-window.onload = () => {
-  index = 0;
-  const target = document.getElementById("typed-text");
-  if (target) target.textContent = "";
-  typeEffect();
-};
+window.onload = typeEffect;
