@@ -83,24 +83,26 @@ body {
 }
 
 /* NAV */
-.home-grid {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 26px;
-}
-
 .home-grid button {
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+
+  /* 🔥 FIXED COLORS */
+  background: rgba(15, 23, 42, 0.85);
   color: #38bdf8;
-  border: 1px solid rgba(56,189,248,0.6);
-  background: rgba(2,6,23,0.9);
-  transition: 0.3s;
+
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 14px rgba(56,189,248,0.25);
+
+  transition: all 0.25s ease;
 }
 
 .home-grid button:hover {
   background: rgba(56,189,248,0.15);
+  box-shadow: 0 0 24px rgba(56,189,248,0.6);
+  transform: translateY(-2px);
 }
 
 /* CARD */
