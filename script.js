@@ -12,6 +12,10 @@ function showSection(id) {
     behavior: "instant"
   });
 }
+function goHome() {
+  showSection("home");
+}
+
 
 
 /* PROJECT DATA */
