@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Prakash R | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <div class="name-header">Prakash R</div>
@@ -14,9 +12,10 @@
 <!-- HOME -->
 <section class="page-section active hero" id="home">
 
-  <div class="hero-top">
+  <div class="hero-content">
+
     <div class="photo-ring">
-      <img src="raj.jpeg" alt="Prakash R">
+      <img src="raj.jpeg" alt="Prakash R" />
     </div>
 
     <h1 class="typing-text">
@@ -24,15 +23,16 @@
     </h1>
 
     <p class="subtitle">Computer Science Engineering Student</p>
-  </div>
 
-  <div class="home-grid">
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('contact')">Contact</button>
-  </div>
+    <!-- NAV BUTTONS (INSIDE HERO) -->
+    <div class="home-grid">
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('skills')">Skills</button>
+      <button onclick="showSection('projects')">Projects</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </div>
 
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -65,9 +65,10 @@
 <section class="page-section" id="projects">
   <div class="card">
     <h2>Projects</h2>
-    <p>SWIFT-Care</p>
-    <p>Subscription Management</p>
-    <p>Air Quality Predictor</p>
+
+    <div class="project" onclick="openProject('swift')">SWIFT-Care</div>
+    <div class="project" onclick="openProject('subscription')">Subscription Management</div>
+    <div class="project" onclick="openProject('air')">Air Quality Predictor</div>
   </div>
 </section>
 
@@ -80,7 +81,18 @@
   </div>
 </section>
 
-<div class="back-btn" onclick="showSection('home')">← Home</div>
+<!-- MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <p id="modalTech"></p>
+    <a id="modalLink" target="_blank">View on GitHub →</a>
+  </div>
+</div>
+
+<div class="back-btn" onclick="goHome()">← Home</div>
 
 <script src="script.js"></script>
 </body>
