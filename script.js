@@ -1,16 +1,16 @@
 function showSection(id) {
+  // Hide all sections
   document.querySelectorAll(".page-section").forEach(section => {
     section.classList.remove("active");
   });
 
+  // Show selected section
   const target = document.getElementById(id);
   target.classList.add("active");
 
-  /* 🔥 CRITICAL FIX */
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  // 🔥 FORCE scroll reset (mobile fix)
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 

@@ -1,3 +1,7 @@
+html {
+  overscroll-behavior: auto;
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -233,62 +237,40 @@ body {
   z-index: 1500;
 }
 
-/* MOBILE FIX (CRITICAL) */
+/* ===== MOBILE CONTENT FIX ===== */
 @media (max-width: 768px) {
 
-  body {
+  html, body {
+    height: auto;
     overflow-y: auto;
+    overscroll-behavior-y: auto; /* enable pull-to-refresh */
   }
 
-  .typing-text {
-    font-size: 32px;
-  }
-
-  .home-grid {
-    grid-template-columns: repeat(2, 1fr);
-    width: 90%;
-  }
-
+  /* Cards should be readable */
   .card {
-    width: 90%;
-    padding: 30px;
-  }
-}
-/* MOBILE UX IMPROVEMENTS */
-@media (max-width: 768px) {
-
-  body {
-    overflow-y: auto;
-    overscroll-behavior-y: auto; /* enables pull-to-refresh */
-  }
-
-  .hero {
-    gap: 30px; /* reduce space */
-  }
-
-  /* Move nav closer to hero */
-  .home-grid {
-    margin-top: 10px;
-  }
-
-  /* Bigger, touch-friendly icons */
-  .home-card {
+    width: 92%;
     padding: 28px;
+    font-size: 16px;
   }
 
-  .home-card h3 {
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Skills boxes */
+  .box {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  /* Project titles */
+  .project h3 {
     font-size: 18px;
-  }
-
-  /* Reduce photo size slightly */
-  .photo-ring {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-  }
-
-  /* Smaller typing text */
-  .typing-text {
-    font-size: 30px;
   }
 }
