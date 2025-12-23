@@ -81,10 +81,10 @@ body {
 
 /* PHOTO */
 .photo-ring {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  padding: 4px;
+  width: 125px;
+  height: 145px;
+  border-radius: 70%;
+  padding: 1px;
   background: linear-gradient(135deg, #38bdf8, #8b5cf6);
 }
 
