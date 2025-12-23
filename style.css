@@ -8,7 +8,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* IMPORTANT */
+  overflow: hidden;
 }
 
 body {
@@ -19,44 +19,43 @@ body {
 /* HEADER */
 .name-header {
   position: fixed;
-  top: 20px;
-  left: 30px;
-  font-size: 22px;
+  top: 16px;
+  left: 20px;
+  font-size: 20px;
   font-weight: 600;
   color: #38bdf8;
   z-index: 1000;
 }
 
-/* SECTIONS — FULL SCREEN PAGES */
+/* SECTIONS */
 .page-section {
-  position: fixed;
-  inset: 0;
   display: none;
-  padding-top: 90px;
+  width: 100%;
+  height: 100vh;
 }
 
 .page-section.active {
-  display: block;
-}
-
-/* HERO */
-.hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 40px;
 }
 
-/* TYPING */
-.typing-container {
+/* HOME */
+.hero {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px 40px;
+}
+
+/* HERO TOP */
+.hero-top {
   text-align: center;
 }
 
+/* PHOTO */
 .photo-ring {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 20px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, #38bdf8, #8b5cf6);
@@ -70,48 +69,44 @@ body {
   object-position: center 30%;
 }
 
+/* TEXT */
 .typing-text {
-  font-size: 40px;
+  font-size: 32px;
   background: linear-gradient(90deg, #38bdf8, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.cursor {
-  color: #8b5cf6;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
 .subtitle {
-  margin-top: 10px;
+  margin-top: 6px;
+  font-size: 14px;
   opacity: 0.7;
 }
 
-/* HOME NAV */
+/* HOME GRID */
 .home-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  width: 80%;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
 }
 
-.home-card {
+.home-grid button {
   background: #020617;
+  color: #38bdf8;
   border: 1px solid #38bdf8;
+  padding: 14px 0;
   border-radius: 14px;
-  padding: 18px;
-  text-align: center;
   cursor: pointer;
+  font-size: 14px;
 }
 
 /* CARD PAGES */
 .card {
+  margin: auto;
+  width: 90%;
   max-width: 700px;
-  margin: 0 auto;
   background: rgba(15,23,42,0.9);
   padding: 40px;
   border-radius: 18px;
@@ -132,27 +127,27 @@ body {
   border-radius: 10px;
 }
 
-/* PROJECT */
-.project {
-  margin-top: 12px;
-}
-
 /* BACK BUTTON */
 .back-btn {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px 16px;
+  bottom: 18px;
+  left: 18px;
   background: #020617;
+  color: #38bdf8;
   border: 1px solid #38bdf8;
   border-radius: 20px;
+  padding: 8px 14px;
   cursor: pointer;
-  color: #38bdf8;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .typing-text { font-size: 30px; }
-  .home-grid { grid-template-columns: repeat(2, 1fr); }
-  .card { width: 92%; padding: 28px; }
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+  }
+
+  .typing-text {
+    font-size: 26px;
+  }
 }

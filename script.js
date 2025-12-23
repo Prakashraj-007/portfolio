@@ -1,3 +1,7 @@
+/* ============================= */
+/* PAGE NAVIGATION               */
+/* ============================= */
+
 function showSection(id) {
   document.querySelectorAll(".page-section").forEach(section => {
     section.classList.remove("active");
@@ -10,7 +14,10 @@ function goHome() {
   showSection("home");
 }
 
-/* PROJECT DATA */
+/* ============================= */
+/* PROJECT DATA & MODAL          */
+/* ============================= */
+
 const projects = {
   swift: {
     title: "SWIFT-Care",
@@ -45,12 +52,8 @@ function closeModal() {
   document.getElementById("projectModal").classList.remove("show");
 }
 
-function goHome() {
-  showSection("home");
-}
-
 /* ============================= */
-/* Typing Effect (ONLY ONCE)     */
+/* TYPING EFFECT (HOME ONLY)     */
 /* ============================= */
 
 const text = "Hi, I'm Prakash R 👋";
@@ -58,11 +61,19 @@ const speed = 100;
 let index = 0;
 
 function typeEffect() {
+  const target = document.getElementById("typed-text");
+  if (!target) return;
+
   if (index < text.length) {
-    document.getElementById("typed-text").textContent += text.charAt(index);
+    target.textContent += text.charAt(index);
     index++;
     setTimeout(typeEffect, speed);
   }
 }
 
-window.onload = typeEffect;
+window.onload = () => {
+  index = 0;
+  const target = document.getElementById("typed-text");
+  if (target) target.textContent = "";
+  typeEffect();
+};
